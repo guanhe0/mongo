@@ -40,9 +40,7 @@ override_dh_auto_build:
 
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 override_dh_auto_test:
-	scons $(COMMON_OPTIONS) \
-		--smokedbprefix=$(CURDIR)/debian/tmp-test \
-		test unittests moduletests smoke
+	python ./buildscripts/smoke.py --smoke-db-prefix="$(CURDIR)/debian/tmp-test"
 .PHONY: override_dh_auto_test
 endif
 
