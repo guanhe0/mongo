@@ -1,16 +1,13 @@
 --- a/SConstruct
 +++ b/SConstruct
-@@ -484,7 +484,12 @@
+@@ -636,6 +636,10 @@
+                CONFIGUREDIR=sconsDataDir.Dir('sconf_temp'),
+                CONFIGURELOG=sconsDataDir.File('config.log'),
+                INSTALL_DIR=installDir,
++               CFLAGS=os.environ.get("CFLAGS", "-O3").split(),
++               CXXFLAGS=os.environ.get("CXXFLAGS", "-O3").split(),
++               CPPFLAGS=os.environ.get("CPPFLAGS", "").split(),
++               LINKFLAGS=os.environ.get("LDFLAGS", "").split(),
+                )
  
-                    PCRE_VERSION='8.37',
-                    CONFIGUREDIR = '#' + scons_data_dir + '/sconf_temp',
--                   CONFIGURELOG = '#' + scons_data_dir + '/config.log'
-+                   CONFIGURELOG = '#' + scons_data_dir + '/config.log',
-+
-+                   CFLAGS=os.environ.get("CFLAGS", "-O3").split(),
-+                   CXXFLAGS=os.environ.get("CXXFLAGS", "-O3").split(),
-+                   CPPFLAGS=os.environ.get("CPPFLAGS", "").split(),
-+                   LINKFLAGS=os.environ.get("LDFLAGS", "").split(),
-                    )
- 
- # Report any unknown variables as an error.
+ if windows:

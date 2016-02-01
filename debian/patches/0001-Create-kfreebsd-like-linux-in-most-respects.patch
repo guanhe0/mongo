@@ -8,7 +8,7 @@ Subject: Create kfreebsd like linux in most respects
 
 --- a/SConstruct
 +++ b/SConstruct
-@@ -66,7 +66,7 @@
+@@ -62,7 +62,7 @@
  if "darwin" == platform:
      darwin = True
      platform = "osx" # prettier than darwin
@@ -17,7 +17,7 @@ Subject: Create kfreebsd like linux in most respects
      linux = True
      platform = "linux"
  elif "sunos5" == platform:
-@@ -526,6 +526,8 @@
+@@ -767,6 +767,8 @@
  
  if env['PYSYSPLATFORM'] == 'linux3':
      env['PYSYSPLATFORM'] = 'linux2'
