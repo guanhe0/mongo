@@ -2,11 +2,9 @@ Description: Don't fail (-Werror) on "unused-variable" and "maybe-uninitialized"
 Author: Martin Pitt <martin.pitt@ubuntu.com>
 Bug-Ubuntu: https://launchpad.net/bugs/1483400
 
-Index: mongodb-2.6.10/SConstruct
-===================================================================
---- mongodb-2.6.10.orig/SConstruct
-+++ mongodb-2.6.10/SConstruct
-@@ -835,6 +835,8 @@ if nix:
+--- a/SConstruct
++++ b/SConstruct
+@@ -1090,6 +1090,8 @@
                           "-Wall",
                           "-Wsign-compare",
                           "-Wno-unused-function",
