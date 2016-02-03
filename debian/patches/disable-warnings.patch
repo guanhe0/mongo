@@ -4,12 +4,14 @@ Bug-Ubuntu: https://launchpad.net/bugs/1483400
 
 --- a/SConstruct
 +++ b/SConstruct
-@@ -1090,6 +1090,8 @@
-                          "-Wall",
-                          "-Wsign-compare",
-                          "-Wno-unused-function",
-+                         "-Wno-unused-variable",
-+                         "-Wno-maybe-uninitialized",
-                          "-Wno-unknown-pragmas",
-                          "-Winvalid-pch"] )
-     # env.Append( " -Wconversion" ) TODO: this doesn't really work yet
+@@ -1734,6 +1734,10 @@
+         # than the return type.
+         AddToCXXFLAGSIfSupported(myenv, "-Wredundant-move")
+ 
++        # Debian
++        AddToCCFLAGSIfSupported(myenv, "-Wno-unused-variable")
++        AddToCCFLAGSIfSupported(myenv, "-Wno-maybe-uninitialized")
++
+     # Check if we need to disable null-conversion warnings
+     if myenv.ToolchainIs('clang'):
+         def CheckNullConversion(context):

@@ -5,5 +5,5 @@
 #0099-Pagesize-hacks.patch
 #0012-support-gnu.patch
 #no-unused-function.patch
-#disable-warnings.patch
+disable-warnings.patch
 hardened-build.patch
