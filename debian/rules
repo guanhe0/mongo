@@ -39,6 +39,11 @@ ifneq (,$(filter $(DEB_HOST_ARCH), $(no_v8_archs)))
 COMMON_OPTIONS += --js-engine=none
 endif
 
+# Wiredtiger does not build on 32-bit systems
+ifeq (32, $(DEB_HOST_ARCH_BITS))
+COMMON_OPTIONS += --wiredtiger=off
+endif
+
 override_dh_auto_clean:
 	scons --keep-going --clean $(COMMON_OPTIONS) .
 	rm -f debian/mongodb-server-$(MONGO_VER).install debian/mongodb-clients-$(MONGO_VER).install
