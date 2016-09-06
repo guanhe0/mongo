@@ -8,6 +8,8 @@
 CC ?= gcc
 CXX ?= g++
 
+export MONGO_VER=3.2
+
 DEB_SCONS_OPTIONS :=
 ifneq (,$(filter debug,$(DEB_BUILD_OPTIONS)))
 	DEB_SCONS_OPTIONS := --d=DEBUGBUILD

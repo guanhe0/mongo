@@ -1,0 +1,4 @@
+#!/usr/bin/dh-exec
+usr/bin/mongo		=> usr/bin/mongo-${MONGO_VER}
+usr/bin/mongoperf	=> usr/bin/mongoperf-${MONGO_VER}
+usr/bin/mongosniff	=> usr/bin/mongosniff-${MONGO_VER}
