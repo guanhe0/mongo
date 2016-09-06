@@ -31,28 +31,6 @@ Vcs-Git: https://anonscm.debian.org/git/collab-maint/mongodb.git
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/mongodb.git/
 Homepage: https://www.mongodb.org
 
-Package: mongodb
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 hurd-any armhf arm64 ppc64el
-Depends: mongodb-server (>= 1:2.4.1-2), ${misc:Depends}, ${shlibs:Depends}
-Description: object/document-oriented database (metapackage)
- MongoDB is a high-performance, open source, schema-free
- document-oriented data store that's easy to deploy, manage
- and use. It's network accessible, written in C++ and offers
- the following features:
- .
-    * Collection oriented storage - easy storage of object-style data
-    * Full index support, including on inner objects
-    * Query profiling
-    * Replication and fail-over support
-    * Efficient storage of binary data including large objects (e.g. videos)
-    * Auto-sharding for cloud-level scalability
- .
- High performance, scalability, and reasonable depth of
- functionality are the goals for the project.
- .
- This is a convenience metapackage that depends on all the mongodb parts:
- the server, the clients and the development files (headers and library).
-
 Package: mongodb-server
 Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 hurd-any armhf arm64 ppc64el
 Depends:
