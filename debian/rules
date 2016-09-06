@@ -4,6 +4,8 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+export MONGO_VER=2.6
+
 DEB_SCONS_OPTIONS :=
 ifneq (,$(filter debug,$(DEB_BUILD_OPTIONS)))
 	DEB_SCONS_OPTIONS := --d=DEBUGBUILD
@@ -60,7 +62,7 @@ override_dh_install:
 ifneq (,$(filter $(DEB_HOST_ARCH), $(no_v8_archs)))
 	# mongo shell is broken without scripting so drop it from
 	# the binary
-	rm -f $(CURDIR)/tmp/mongodb-clients/usr/bin/mongo
+	rm -f $(CURDIR)/tmp/mongodb-clients/usr/bin/mongo-$(MONGO_VER)
 endif
 
 %:

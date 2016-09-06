@@ -1,0 +1,13 @@
+#!/usr/bin/dh-exec
+usr/bin/bsondump	=> usr/bin/bsondump-${MONGO_VER}
+usr/bin/mongo		=> usr/bin/mongo-${MONGO_VER}
+usr/bin/mongodump	=> usr/bin/mongodump-${MONGO_VER}
+usr/bin/mongoexport	=> usr/bin/mongoexport-${MONGO_VER}
+usr/bin/mongofiles	=> usr/bin/mongofiles-${MONGO_VER}
+usr/bin/mongoimport	=> usr/bin/mongoimport-${MONGO_VER}
+usr/bin/mongooplog	=> usr/bin/mongooplog-${MONGO_VER}
+usr/bin/mongoperf	=> usr/bin/mongoperf-${MONGO_VER}
+usr/bin/mongorestore	=> usr/bin/mongorestore-${MONGO_VER}
+usr/bin/mongosniff	=> usr/bin/mongosniff-${MONGO_VER}
+usr/bin/mongostat	=> usr/bin/mongostat-${MONGO_VER}
+usr/bin/mongotop	=> usr/bin/mongotop-${MONGO_VER}
