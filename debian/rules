@@ -4,6 +4,8 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+export MONGO_VER=3.0
+
 DEB_SCONS_OPTIONS :=
 ifneq (,$(filter debug,$(DEB_BUILD_OPTIONS)))
 	DEB_SCONS_OPTIONS := --d=DEBUGBUILD
