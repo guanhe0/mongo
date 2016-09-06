@@ -31,7 +31,6 @@ Homepage: https://www.mongodb.org
 Package: mongodb-server
 Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 hurd-any armhf arm64 ppc64el
 Depends:
- mongodb-clients,
  adduser,
  ${misc:Depends},
  ${shlibs:Depends}
