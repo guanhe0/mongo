@@ -1,3 +1,16 @@
+mongodb-2.6 (2.6.12-4~pre1) UNRELEASED; urgency=medium
+
+  * Switch maintainer to pkg-mongodb
+  * Change source name to mongodb-2.6
+  * Drop the mongodb binary package
+  * mongodb-server: drop dependency on mongodb-clients
+  * Append major.minor version to binary package names
+  * Drop all version-indep parts and handle package renames
+  * Refactor DEP-8 tests
+  * Reset the epoch; we build new binary packages now
+
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Tue, 06 Sep 2016 16:16:08 +0300
+
 mongodb (1:2.6.12-3) unstable; urgency=high
 
   * Fix CVE-2016-6494 , prevent group and other access to .dbshell
