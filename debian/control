@@ -1,4 +1,4 @@
-Source: mongodb
+Source: mongodb-3.0
 Section: database
 Priority: optional
 Maintainer: Debian MongoDB Maintainers <pkg-mongodb-maintainers@lists.alioth.debian.org>
