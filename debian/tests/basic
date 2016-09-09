@@ -37,7 +37,7 @@ trap 'cleanup' EXIT
 
 echo -n " -> Waiting for mongod to start: "
 count=0
-while ! echo 'db.version()' | $MONGO_CLIENT --quiet >/dev/null; do
+while ! echo 'db.version()' | $MONGO_CLIENT --quiet >/dev/null 2>&1; do
     echo -n "."
     count=$((count+1))
     if test $count -gt $TIMEOUT; then
