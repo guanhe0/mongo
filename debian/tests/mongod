@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-echo -n "Checking for running mongod process: "
-pgrep mongod 2>/dev/null
-echo "OK"
