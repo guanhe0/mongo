@@ -8,7 +8,7 @@
 CC ?= gcc
 CXX ?= g++
 
-export MONGO_VER=3.2
+export MONGO_VER=$(shell dpkg-parsechangelog -SSource | sed 's/^mongodb-//')
 
 DEB_SCONS_OPTIONS :=
 ifneq (,$(filter debug,$(DEB_BUILD_OPTIONS)))
