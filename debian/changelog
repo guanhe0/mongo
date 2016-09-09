@@ -1,3 +1,16 @@
+mongodb-3.2 (3.2.9-2~pre1) UNRELEASED; urgency=medium
+
+  * Switch maintainer to pkg-mongodb
+  * Change source name to mongodb-3.2
+  * Drop the mongodb binary package
+  * mongodb-server: drop dependency on mongodb-clients
+  * Append major.minor version to binary package names
+  * Drop all version-indep parts and handle package renames
+  * DEP-8 test refactoring
+  * Remove init/systemd-related parts
+
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Fri, 09 Sep 2016 11:52:04 +0300
+
 mongodb (1:3.2.9-1) experimental; urgency=medium
 
   * New upstream release.
