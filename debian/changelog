@@ -1,3 +1,36 @@
+mongodb-3.0 (3.0.9-1~pre1) UNRELEASED; urgency=medium
+
+  * Imported Upstream version 3.0.9
+  * d/watch: look for 3.0 releases
+  * B-D on zlib1g-dev
+  * Drop ppc64el patch, merged upstream.
+  * Drop Fix-GCC-5-FTBFS.patch, merged upstream.
+  * Drop fix-yaml-detection patch, merged upstream.
+  * Drop add-option-to-disable-javascript.patch.
+  * Refresh patches
+  * 'scons smoke' is gone, run smoke directly
+  * scons: use a fixed build directory
+  * Use bundled wiredtiger
+  * mongodb-clients: drop binaries removed upstream
+  * Drop manpages of missing binaries.
+  * d/copyright: update for 3.0
+  * d/rules: run the rest of the tests as well
+  * fixup! Refresh patches
+  * Switch maintainer to pkg-mongodb
+  * Change source name to mongodb-3.0
+  * Drop the mongodb binary package
+  * mongodb-server: drop dependency on mongodb-clients
+  * Append major.minor version to binary package names
+  * Drop all version-indep parts and handle package renames
+  * DEP-8 test refactoring
+  * Remove init/systemd-related parts
+  * Drop debian/NEWS
+  * Make lintian overrides version-independent
+  * d/rules: obtain mongo version from source name
+  * Add version in the package descriptions
+
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Fri, 09 Sep 2016 15:59:15 +0300
+
 mongodb (1:2.6.12-3) unstable; urgency=high
 
   * Fix CVE-2016-6494 , prevent group and other access to .dbshell
