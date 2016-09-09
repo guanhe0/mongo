@@ -34,7 +34,7 @@ Depends:
  adduser,
  ${misc:Depends},
  ${shlibs:Depends}
-Description: object/document-oriented database (server package)
+Description: object/document-oriented database - server (version ${mongo:version})
  MongoDB is a high-performance, open source, schema-free
  document-oriented data store that's easy to deploy, manage
  and use. It's network accessible, written in C++ and offers
@@ -50,15 +50,15 @@ Description: object/document-oriented database (server package)
  High performance, scalability, and reasonable depth of
  functionality are the goals for the project.
  .
- This package contains the server itself  (mongod) and the sharding
- server/load-balancer (mongos).
+ This package contains the server itself (mongod) and the sharding
+ server/load-balancer (mongos) version ${mongo:version}.
 
 Package: mongodb-clients-2.6
 Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 hurd-any armhf arm64 ppc64el
 Depends:
  ${misc:Depends},
  ${shlibs:Depends}
-Description: object/document-oriented database (client apps)
+Description: object/document-oriented database - clients (version ${mongo:version})
  MongoDB is a high-performance, open source, schema-free
  document-oriented data store that's easy to deploy, manage
  and use. It's network accessible, written in C++ and offers
@@ -75,4 +75,5 @@ Description: object/document-oriented database (client apps)
  functionality are the goals for the project.
  .
  This package contains the standard administrative shell (mongo) and other
- utilities for administration or analysis of performance of the server.
+ utilities for administration or analysis of performance of the MongoDB
+ ${mongo:version} server.
