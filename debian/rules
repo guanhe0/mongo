@@ -63,8 +63,12 @@ ifneq (,$(filter $(DEB_HOST_ARCH), $(no_v8_archs)))
 	rm -f $(CURDIR)/tmp/mongodb-clients/usr/bin/mongo
 endif
 
+override_dh_gencontrol:
+	dh_gencontrol -- -Vmongo:version=$(MONGO_VER)
+
 %:
 	dh $@ --parallel
 
 .PHONY: override_dh_auto_clean override_dh_auto_build \
-	override_dh_auto_install override_dh_install
+	override_dh_auto_install override_dh_install \
+	override_dh_gencontrol
