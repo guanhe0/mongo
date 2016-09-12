@@ -46,7 +46,9 @@ endif
 
 override_dh_auto_clean:
 	scons --keep-going --clean $(COMMON_OPTIONS) .
-	rm -f debian/mongodb-server-$(MONGO_VER).install debian/mongodb-clients-$(MONGO_VER).install
+	rm -f 	debian/mongodb-server-$(MONGO_VER).install \
+		debian/mongodb-clients-$(MONGO_VER).install \
+		debian/mongodb-server-$(MONGO_VER).triggers
 
 override_dh_auto_build:
 	scons $(COMMON_OPTIONS) core tools
@@ -71,6 +73,10 @@ ifneq (,$(filter $(DEB_HOST_ARCH), $(no_v8_archs)))
 	rm -f $(CURDIR)/tmp/mongodb-clients/usr/lib/mongodb/${MONGO_VER}/mongo
 endif
 
+override_dh_installdeb:
+	echo 'activate-noawait mongodb-server' > debian/mongodb-server-$(MONGO_VER).triggers
+	dh_installdeb
+
 override_dh_gencontrol:
 	dh_gencontrol -- -Vmongo:version=$(MONGO_VER)
 
@@ -79,4 +85,4 @@ override_dh_gencontrol:
 
 .PHONY: override_dh_auto_clean override_dh_auto_build \
 	override_dh_auto_install override_dh_install \
-	override_dh_gencontrol
+	override_dh_gencontrol override_dh_installdeb
