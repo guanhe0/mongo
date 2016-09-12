@@ -50,7 +50,9 @@ override_dh_auto_clean:
 	rm -rf $(CURDIR)/.scons/
 	rm -rf $(CURDIR)/build/
 	rm -f $(CURDIR)/failfile.smoke $(CURDIR)/smoke-last.json
-	rm -f debian/mongodb-server-$(MONGO_VER).install debian/mongodb-clients-$(MONGO_VER).install
+	rm -f 	debian/mongodb-server-$(MONGO_VER).install \
+		debian/mongodb-clients-$(MONGO_VER).install \
+		debian/mongodb-server-$(MONGO_VER).triggers
 
 override_dh_auto_build:
 	scons $(COMMON_OPTIONS) core tools
@@ -70,6 +72,10 @@ override_dh_install:
 	cp debian/mongodb-server-ver.install debian/mongodb-server-$(MONGO_VER).install
 	dh_install --list-missing
 
+override_dh_installdeb:
+	echo 'activate-noawait mongodb-server' > debian/mongodb-server-$(MONGO_VER).triggers
+	dh_installdeb
+
 override_dh_gencontrol:
 	dh_gencontrol -- -Vmongo:version=$(MONGO_VER)
 
@@ -78,4 +84,4 @@ override_dh_gencontrol:
 
 .PHONY: override_dh_auto_clean override_dh_auto_build \
 	override_dh_auto_install override_dh_install \
-	override_dh_gencontrol
+	override_dh_gencontrol override_dh_installdeb
