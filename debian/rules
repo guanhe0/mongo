@@ -50,6 +50,7 @@ override_dh_auto_clean:
 	rm -rf $(CURDIR)/.scons/
 	rm -rf $(CURDIR)/build/
 	rm -f $(CURDIR)/failfile.smoke $(CURDIR)/smoke-last.json
+	rm -f debian/mongodb-server-$(MONGO_VER).install debian/mongodb-clients-$(MONGO_VER).install
 
 override_dh_auto_build:
 	scons $(COMMON_OPTIONS) core tools
@@ -65,6 +66,8 @@ override_dh_auto_install:
 	scons $(COMMON_OPTIONS) --prefix=$(CURDIR)/debian/tmp/usr install
 
 override_dh_install:
+	cp debian/mongodb-clients-ver.install debian/mongodb-clients-$(MONGO_VER).install
+	cp debian/mongodb-server-ver.install debian/mongodb-server-$(MONGO_VER).install
 	dh_install --list-missing
 
 override_dh_gencontrol:
