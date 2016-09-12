@@ -1,3 +1,3 @@
 #!/usr/bin/dh-exec
-usr/bin/mongod => usr/bin/mongod-${MONGO_VER}
-usr/bin/mongos => usr/bin/mongos-${MONGO_VER}
+usr/bin/mongod => usr/lib/mongodb/${MONGO_VER}/mongod
+usr/bin/mongos => usr/lib/mongodb/${MONGO_VER}/mongos
