@@ -1,4 +1,4 @@
-mongodb-2.6 (2.6.12-4~pre1) UNRELEASED; urgency=medium
+mongodb-2.6 (2.6.12-4~pre2) UNRELEASED; urgency=medium
 
   * Switch maintainer to pkg-mongodb
   * Change source name to mongodb-2.6
@@ -8,8 +8,9 @@ mongodb-2.6 (2.6.12-4~pre1) UNRELEASED; urgency=medium
   * Drop all version-indep parts and handle package renames
   * Refactor DEP-8 tests
   * Reset the epoch; we build new binary packages now
+  * Ship all versioned binaries under /usr/lib/mongodb 
 
- -- Apollon Oikonomopoulos <apoikos@debian.org>  Tue, 06 Sep 2016 16:16:08 +0300
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Mon, 12 Sep 2016 10:55:12 +0300
 
 mongodb (1:2.6.12-3) unstable; urgency=high
 
