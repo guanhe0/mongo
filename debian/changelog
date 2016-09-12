@@ -1,4 +1,4 @@
-mongodb-3.0 (3.0.9-1~pre1) UNRELEASED; urgency=medium
+mongodb-3.0 (3.0.9-1~pre2) UNRELEASED; urgency=medium
 
   * Imported Upstream version 3.0.9
   * d/watch: look for 3.0 releases
@@ -28,8 +28,10 @@ mongodb-3.0 (3.0.9-1~pre1) UNRELEASED; urgency=medium
   * Make lintian overrides version-independent
   * d/rules: obtain mongo version from source name
   * Add version in the package descriptions
+  * Generate dh_install files on the fly
+  * Ship all binaries under /usr/lib/mongodb 
 
- -- Apollon Oikonomopoulos <apoikos@debian.org>  Fri, 09 Sep 2016 15:59:15 +0300
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Mon, 12 Sep 2016 13:34:12 +0300
 
 mongodb (1:2.6.12-3) unstable; urgency=high
 
